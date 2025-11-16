@@ -1,0 +1,9 @@
+{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "plugins": ["prettier-plugin-curly"],
+
+  // 👇 Force a newline after blocks (functions, if, loops)
+  "curlySpacing": "always"
+}

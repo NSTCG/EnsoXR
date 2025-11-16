@@ -1,0 +1,47 @@
+{
+    "views": {
+        "console": {
+            "showInfo": true,
+            "showWarnings": true,
+            "showErrors": true
+        },
+        "sceneView": {
+            "visualizeObjects": false,
+            "visualizeLights": true,
+            "visualizeBones": false,
+            "visualizeViews": true,
+            "visualizeCollision": true,
+            "visualizeCollisionSelected": false,
+            "visualizeOverdraw": false,
+            "visualizePhysics": true,
+            "visualizePhysicsSelected": false,
+            "visualizeProbes": true,
+            "visualizeProbeVoxels": true,
+            "visualizeProbeBounds": true
+        },
+        "mainView": {
+            "launchSSL": false
+        },
+        "projectSettings": {
+            "advancedScripting": false
+        }
+    },
+    "openViews": {
+        "Main Window": true,
+        "Scene View": true,
+        "Asset Browser": true,
+        "Console": true,
+        "Scene Outline": true,
+        "Properties": true,
+        "Project Settings": true,
+        "Resources": true,
+        "Project Data": false,
+        "Benchmark": false,
+        "Profile": false,
+        "Preferences": true,
+        "Localization": false,
+        "Animation Editor": false,
+        "Resource Tree": false,
+        "Plugins": true
+    }
+}

@@ -1,0 +1,6253 @@
+{
+    "objects": {
+        "14": {
+            "name": "Player",
+            "translation": [
+                -2.5,
+                0.0,
+                1.1575535
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.9999998,
+                1.0,
+                0.9999998
+            ],
+            "components": [
+                {
+                    "type": "wasd-controls",
+                    "wasd-controls": {
+                        "headObject": "17"
+                    }
+                }
+            ]
+        },
+        "17": {
+            "name": "NonVrCamera",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "mouse-look",
+                    "mouse-look": {
+                        "mouseButtonIndex": 2
+                    }
+                },
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "collisionGroup": 0,
+                        "handedness": "none",
+                        "rayCastMode": "physx"
+                    }
+                },
+                {
+                    "type": "audio-listener"
+                },
+                {
+                    "type": "vr-mode-active-switch",
+                    "vr-mode-active-switch": {
+                        "activateComponents": "in non-VR"
+                    }
+                },
+                {
+                    "type": "mesh-brush",
+                    "mesh-brush": {
+                        "brushColor": [
+                            0.2061214,
+                            0.9921568,
+                            0.1673048,
+                            1.0
+                        ]
+                    }
+                }
+            ],
+            "translation": [
+                1.5183496,
+                0.423651,
+                -1.3807976
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "18": {
+            "name": "EyeLeft",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye left"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "19": {
+            "name": "EyeRight",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye right"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "21": {
+            "name": "Light",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "intensity": 0.5,
+                        "type": "sun"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                8.344650268554688e-7,
+                3.0000004,
+                1.9999992
+            ],
+            "rotation": [
+                -0.7040023,
+                0.4777661,
+                -0.2950742,
+                0.4348004
+            ],
+            "scaling": [
+                0.9999995,
+                0.9999995,
+                1.0
+            ]
+        },
+        "53": {
+            "link": {
+                "name": "root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "130",
+            "name": "ControllerModelLeft",
+            "translation": [
+                -0.0117514,
+                0.0008869,
+                0.0161192
+            ],
+            "rotation": [
+                -0.0,
+                0.7316615,
+                0.6816681,
+                3.196286257889369e-8
+            ],
+            "scaling": [
+                0.9999998,
+                0.9999999,
+                0.9999997
+            ]
+        },
+        "54": {
+            "link": {
+                "name": "controller<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53",
+            "components": [
+                {
+                    "active": false
+                }
+            ]
+        },
+        "55": {
+            "link": {
+                "name": "thumbrest_pressed_max<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "56": {
+            "link": {
+                "name": "thumbrest_pressed_min<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "57": {
+            "link": {
+                "name": "thumbrest_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "58": {
+            "link": {
+                "name": "x_button_pressed_max<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "59": {
+            "link": {
+                "name": "x_button_pressed_min<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "60": {
+            "link": {
+                "name": "x_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "61": {
+            "link": {
+                "name": "x_button<x_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "60"
+        },
+        "62": {
+            "link": {
+                "name": "xr_standard_squeeze_pressed_max<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "63": {
+            "link": {
+                "name": "xr_standard_squeeze_pressed_min<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "64": {
+            "link": {
+                "name": "xr_standard_squeeze_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "65": {
+            "link": {
+                "name": "squeeze<xr_standard_squeeze_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "64"
+        },
+        "66": {
+            "link": {
+                "name": "xr_standard_thumbstick_pressed_max<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "67": {
+            "link": {
+                "name": "xr_standard_thumbstick_pressed_min<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "68": {
+            "link": {
+                "name": "xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "69": {
+            "link": {
+                "name": "xr_standard_thumbstick_xaxis_pressed_max<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "68"
+        },
+        "70": {
+            "link": {
+                "name": "xr_standard_thumbstick_xaxis_pressed_min<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "68"
+        },
+        "71": {
+            "link": {
+                "name": "xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "68"
+        },
+        "72": {
+            "link": {
+                "name": "xr_standard_thumbstick_yaxis_pressed_max<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "71"
+        },
+        "73": {
+            "link": {
+                "name": "xr_standard_thumbstick_yaxis_pressed_min<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "71"
+        },
+        "74": {
+            "link": {
+                "name": "xr_standard_thumbstick_yaxis_pressed_value<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "71"
+        },
+        "75": {
+            "link": {
+                "name": "thumbstick<xr_standard_thumbstick_yaxis_pressed_value<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "74"
+        },
+        "76": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_max<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "77": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_min<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "78": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "79": {
+            "link": {
+                "name": "trigger<xr_standard_trigger_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "78"
+        },
+        "80": {
+            "link": {
+                "name": "y_button_pressed_max<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "81": {
+            "link": {
+                "name": "y_button_pressed_min<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "82": {
+            "link": {
+                "name": "y_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "53"
+        },
+        "83": {
+            "link": {
+                "name": "y_button<y_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "parent": "82"
+        },
+        "95": {
+            "link": {
+                "name": "root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "129",
+            "name": "ControllerModelRight",
+            "translation": [
+                0.0097994,
+                -0.0006203,
+                0.0177838
+            ],
+            "rotation": [
+                -0.0,
+                0.999921,
+                -0.0125658,
+                -4.174509058429976e-7
+            ],
+            "scaling": [
+                0.9993978,
+                0.9993963,
+                1.0000015
+            ]
+        },
+        "96": {
+            "link": {
+                "name": "a_button_pressed_max<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "97": {
+            "link": {
+                "name": "a_button_pressed_min<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "98": {
+            "link": {
+                "name": "a_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "99": {
+            "link": {
+                "name": "a_button<a_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "98"
+        },
+        "100": {
+            "link": {
+                "name": "b_button_pressed_max<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "101": {
+            "link": {
+                "name": "b_button_pressed_min<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "102": {
+            "link": {
+                "name": "b_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "103": {
+            "link": {
+                "name": "b_button<b_button_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "102"
+        },
+        "104": {
+            "link": {
+                "name": "controller<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95",
+            "components": [
+                {
+                    "active": false
+                }
+            ]
+        },
+        "105": {
+            "link": {
+                "name": "thumbrest_pressed_max<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "106": {
+            "link": {
+                "name": "thumbrest_pressed_min<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "107": {
+            "link": {
+                "name": "thumbrest_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "108": {
+            "link": {
+                "name": "xr_standard_squeeze_pressed_max<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "109": {
+            "link": {
+                "name": "xr_standard_squeeze_pressed_min<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "110": {
+            "link": {
+                "name": "xr_standard_squeeze_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "111": {
+            "link": {
+                "name": "squeeze<xr_standard_squeeze_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "110"
+        },
+        "112": {
+            "link": {
+                "name": "xr_standard_thumbstick_pressed_max<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "113": {
+            "link": {
+                "name": "xr_standard_thumbstick_pressed_min<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "114": {
+            "link": {
+                "name": "xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "115": {
+            "link": {
+                "name": "xr_standard_thumbstick_xaxis_pressed_max<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "114"
+        },
+        "116": {
+            "link": {
+                "name": "xr_standard_thumbstick_xaxis_pressed_min<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "114"
+        },
+        "117": {
+            "link": {
+                "name": "xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "114"
+        },
+        "118": {
+            "link": {
+                "name": "xr_standard_thumbstick_yaxis_pressed_max<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "117"
+        },
+        "119": {
+            "link": {
+                "name": "xr_standard_thumbstick_yaxis_pressed_min<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "117"
+        },
+        "120": {
+            "link": {
+                "name": "xr_standard_thumbstick_yaxis_pressed_value<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "117"
+        },
+        "121": {
+            "link": {
+                "name": "thumbstick<xr_standard_thumbstick_yaxis_pressed_value<xr_standard_thumbstick_xaxis_pressed_value<xr_standard_thumbstick_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "120"
+        },
+        "122": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_max<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "123": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_min<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "124": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "95"
+        },
+        "125": {
+            "link": {
+                "name": "trigger<xr_standard_trigger_pressed_value<root",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "parent": "124"
+        },
+        "126": {
+            "name": "CursorLeft",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "cursorObject": "127",
+                        "collisionGroup": 0,
+                        "cursorRayObject": "209",
+                        "cursorRayScalingAxis": "y"
+                    }
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "ray left"
+                    }
+                },
+                {
+                    "type": "teleport",
+                    "teleport": {
+                        "floorGroup": 2,
+                        "camRoot": "14",
+                        "cam": "17",
+                        "teleportIndicatorMeshObject": "208",
+                        "indicatorYOffset": 0.0099999,
+                        "eyeLeft": "18",
+                        "eyeRight": "19"
+                    }
+                },
+                {
+                    "type": "vr-mode-active-switch"
+                }
+            ],
+            "translation": [
+                2.384185791015625e-7,
+                1.1920928955078125e-7,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "127": {
+            "name": "3DCursorHitLeft",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "9",
+                        "material": "128"
+                    }
+                }
+            ],
+            "parent": null,
+            "translation": [
+                0.0,
+                0.0388117,
+                1.5585094
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0099999,
+                0.0099999,
+                0.0099999
+            ]
+        },
+        "129": {
+            "name": "ControllerRight",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "hand right"
+                    }
+                },
+                {
+                    "type": "vr-mode-active-switch",
+                    "active": true
+                },
+                {
+                    "type": "input-profile",
+                    "input-profile": {
+                        "defaultController": "95",
+                        "trackedHand": "167",
+                        "handedness": "right",
+                        "mapToDefaultController": true
+                    }
+                }
+            ],
+            "translation": [
+                0.1003172,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "130": {
+            "name": "ControllerLeft",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "hand left"
+                    }
+                },
+                {
+                    "type": "vr-mode-active-switch",
+                    "active": true
+                },
+                {
+                    "type": "input-profile",
+                    "input-profile": {
+                        "defaultController": "53",
+                        "trackedHand": "134",
+                        "mapToDefaultController": true
+                    }
+                }
+            ],
+            "translation": [
+                -0.1002006,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "134": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "205",
+            "name": "HandLeft",
+            "components": [
+                {
+                    "type": "hand-tracking",
+                    "hand-tracking": {
+                        "handedness": "left",
+                        "handSkin": "133",
+                        "controllerToDeactivate": "130",
+                        "deactivateChildrenWithoutPose": true
+                    }
+                },
+                {
+                    "type": "vr-mode-active-switch",
+                    "active": true
+                }
+            ],
+            "translation": [
+                -0.1002006,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "135": {
+            "link": {
+                "name": "l_handMeshNode<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "components": [
+                {
+                    "active": true,
+                    "mesh": {
+                        "skin": "133",
+                        "material": null
+                    }
+                }
+            ]
+        },
+        "136": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_max<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134"
+        },
+        "137": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_min<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134"
+        },
+        "138": {
+            "link": {
+                "name": "xr_standard_trigger_pressed_value<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134"
+        },
+        "139": {
+            "link": {
+                "name": "pinky-finger-tip<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "140": {
+            "link": {
+                "name": "pinky-finger-phalanx-distal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "141": {
+            "link": {
+                "name": "pinky-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "142": {
+            "link": {
+                "name": "pinky-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "143": {
+            "link": {
+                "name": "pinky-finger-metacarpal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "144": {
+            "link": {
+                "name": "ring-finger-tip<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "145": {
+            "link": {
+                "name": "ring-finger-phalanx-distal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "146": {
+            "link": {
+                "name": "ring-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "147": {
+            "link": {
+                "name": "ring-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "148": {
+            "link": {
+                "name": "ring-finger-metacarpal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "149": {
+            "link": {
+                "name": "middle-finger-tip<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "150": {
+            "link": {
+                "name": "middle-finger-phalanx-distal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "151": {
+            "link": {
+                "name": "middle-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "152": {
+            "link": {
+                "name": "middle-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "153": {
+            "link": {
+                "name": "middle-finger-metacarpal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "154": {
+            "link": {
+                "name": "index-finger-tip<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "components": [
+                {
+                    "type": "finger-cursor"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "sphere": {
+                            "radius": 0.0099999
+                        },
+                        "groups": 2
+                    }
+                }
+            ],
+            "skin": "133"
+        },
+        "155": {
+            "link": {
+                "name": "index-finger-phalanx-distal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "156": {
+            "link": {
+                "name": "index-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "157": {
+            "link": {
+                "name": "index-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "158": {
+            "link": {
+                "name": "index-finger-metacarpal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "159": {
+            "link": {
+                "name": "thumb-tip<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "160": {
+            "link": {
+                "name": "thumb-phalanx-distal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "161": {
+            "link": {
+                "name": "thumb-phalanx-proximal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "162": {
+            "link": {
+                "name": "thumb-metacarpal<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "163": {
+            "link": {
+                "name": "wrist<Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "parent": "134",
+            "skin": "133"
+        },
+        "167": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "205",
+            "name": "HandRight",
+            "components": [
+                {
+                    "type": "hand-tracking",
+                    "hand-tracking": {
+                        "handedness": "right",
+                        "handSkin": "166",
+                        "controllerToDeactivate": "129"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "vr-mode-active-switch",
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.1003172,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "168": {
+            "link": {
+                "name": "r_handMeshNode<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "components": [
+                {
+                    "mesh": {
+                        "skin": "166"
+                    }
+                }
+            ]
+        },
+        "169": {
+            "link": {
+                "name": "wrist<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "170": {
+            "link": {
+                "name": "thumb-metacarpal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "171": {
+            "link": {
+                "name": "thumb-phalanx-proximal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "172": {
+            "link": {
+                "name": "thumb-phalanx-distal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "173": {
+            "link": {
+                "name": "thumb-tip<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "174": {
+            "link": {
+                "name": "index-finger-metacarpal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "175": {
+            "link": {
+                "name": "index-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "176": {
+            "link": {
+                "name": "index-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "177": {
+            "link": {
+                "name": "index-finger-phalanx-distal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "178": {
+            "link": {
+                "name": "index-finger-tip<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "sphere": {
+                            "radius": 0.0099999
+                        },
+                        "groups": 2
+                    }
+                },
+                {
+                    "type": "finger-cursor"
+                }
+            ],
+            "skin": "166"
+        },
+        "179": {
+            "link": {
+                "name": "middle-finger-metacarpal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "180": {
+            "link": {
+                "name": "middle-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "181": {
+            "link": {
+                "name": "middle-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "182": {
+            "link": {
+                "name": "middle-finger-phalanx-distal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "183": {
+            "link": {
+                "name": "middle-finger-tip<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "184": {
+            "link": {
+                "name": "ring-finger-metacarpal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "185": {
+            "link": {
+                "name": "ring-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "186": {
+            "link": {
+                "name": "ring-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "187": {
+            "link": {
+                "name": "ring-finger-phalanx-distal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "188": {
+            "link": {
+                "name": "ring-finger-tip<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "189": {
+            "link": {
+                "name": "pinky-finger-metacarpal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "190": {
+            "link": {
+                "name": "pinky-finger-phalanx-proximal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "191": {
+            "link": {
+                "name": "pinky-finger-phalanx-intermediate<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "192": {
+            "link": {
+                "name": "pinky-finger-phalanx-distal<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "193": {
+            "link": {
+                "name": "pinky-finger-tip<Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "parent": "167",
+            "skin": "166"
+        },
+        "194": {
+            "name": "Panel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "195",
+                        "material": "202"
+                    }
+                }
+            ],
+            "translation": [
+                -2.5,
+                1.2,
+                0.0
+            ],
+            "rotation": [
+                0.5002117,
+                0.0,
+                0.0,
+                0.8659031
+            ],
+            "scaling": [
+                0.25,
+                0.1249998,
+                0.2499998
+            ]
+        },
+        "196": {
+            "link": {
+                "name": "Cube",
+                "file": "models\\button.glb"
+            },
+            "parent": "197",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "26"
+                    }
+                }
+            ],
+            "name": "ButtonMesh",
+            "translation": [
+                -0.0000094,
+                0.3244419,
+                -0.0000676
+            ],
+            "rotation": [
+                6.000006465001206e-7,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.9999989,
+                0.9999989
+            ]
+        },
+        "197": {
+            "name": "Button",
+            "parent": "194",
+            "components": [
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "button",
+                    "button": {
+                        "buttonMeshObject": "196",
+                        "hoverMaterial": "203"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.0399999,
+                                0.0399999
+                            ]
+                        },
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                -0.0062637,
+                0.057682,
+                0.1754339
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.4,
+                0.4999999,
+                0.3
+            ]
+        },
+        "198": {
+            "name": "ButtonLabel",
+            "parent": "196",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Thanks!"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0001563,
+                0.1084579,
+                0.0000046
+            ],
+            "rotation": [
+                -0.7068095,
+                0.0,
+                0.0,
+                0.7074038
+            ],
+            "scaling": [
+                2.5,
+                3.7999999,
+                4.8000063
+            ]
+        },
+        "200": {
+            "name": "Title",
+            "parent": "194",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Welcome to\nWonderland",
+                        "material": "201"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0000023,
+                0.1554993,
+                -0.303415
+            ],
+            "rotation": [
+                -0.7068591,
+                0.0,
+                0.0,
+                0.7073543
+            ],
+            "scaling": [
+                1.5,
+                3.0000002,
+                1.5000001
+            ]
+        },
+        "205": {
+            "name": "TrackedSpace",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "player-height"
+                }
+            ],
+            "translation": [
+                0.0,
+                1.75,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "208": {
+            "link": {
+                "name": "TeleportIndicator",
+                "file": "models\\teleport-indicator.glb"
+            },
+            "translation": [
+                0.0,
+                0.0099999,
+                1.3311299
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "209": {
+            "name": "CursorRayLeft",
+            "parent": "126",
+            "translation": [
+                0.0,
+                0.0,
+                2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "210": {
+            "name": "CursorRayMeshLeft",
+            "parent": "209",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "10",
+                        "material": "128"
+                    }
+                }
+            ],
+            "translation": [
+                2.3841928964429826e-7,
+                0.0002447,
+                0.0
+            ],
+            "rotation": [
+                0.707,
+                0.0,
+                0.0,
+                0.7072135
+            ],
+            "scaling": [
+                0.0049998,
+                0.3500002,
+                0.0049999
+            ]
+        },
+        "212": {
+            "name": "CursorRight",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "ray right"
+                    }
+                },
+                {
+                    "type": "teleport",
+                    "teleport": {
+                        "floorGroup": 2,
+                        "camRoot": "14",
+                        "cam": "17",
+                        "teleportIndicatorMeshObject": "208",
+                        "indicatorYOffset": 0.0099999,
+                        "eyeLeft": "18",
+                        "eyeRight": "19"
+                    }
+                },
+                {
+                    "type": "vr-mode-active-switch"
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "213": {
+            "name": "CursorRayRight",
+            "parent": "24",
+            "translation": [
+                2.384185791015625e-7,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0000001,
+                1.0000001
+            ]
+        },
+        "214": {
+            "name": "CursorRayMeshRight",
+            "parent": "213",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "10",
+                        "material": "128"
+                    }
+                }
+            ],
+            "translation": [
+                2.384185791015625e-7,
+                0.0002447,
+                0.0
+            ],
+            "rotation": [
+                0.7072796,
+                0.0,
+                0.0,
+                0.7069339
+            ],
+            "scaling": [
+                0.0049998,
+                0.3499999,
+                0.0049999
+            ]
+        },
+        "215": {
+            "name": "3DCursorHitRight",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "9",
+                        "material": "128"
+                    },
+                    "active": true
+                }
+            ],
+            "parent": null,
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0037999,
+                0.0037999,
+                0.0037999
+            ]
+        },
+        "233": {
+            "name": "Head",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "vr-mode-active-switch",
+                    "active": true
+                },
+                {
+                    "type": "audio-listener",
+                    "active": false
+                },
+                {
+                    "type": "input"
+                }
+            ]
+        },
+        "240": {
+            "name": "Empty"
+        },
+        "251": {
+            "name": "3d",
+            "parent": null,
+            "translation": [
+                -2.600202,
+                2.0450441,
+                0.2302456
+            ],
+            "rotation": [
+                -0.6961964,
+                0.0,
+                0.0,
+                0.7178513
+            ],
+            "scaling": [
+                1.0,
+                0.9999882,
+                0.9999882
+            ]
+        },
+        "256": {
+            "link": {
+                "name": "Object_4<cow_0<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "white_cow_of_azure_lane.glb"
+            },
+            "parent": null,
+            "translation": [
+                -2.6002013,
+                1.6017822,
+                0.5320369
+            ],
+            "rotation": [
+                0.2735854,
+                0.0,
+                0.0,
+                0.9618477
+            ],
+            "scaling": [
+                0.9999995,
+                0.9999949,
+                0.999994
+            ],
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "active": false,
+                    "mesh": {
+                        "mesh": "214"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "triangleMesh",
+                        "kinematic": true,
+                        "gravity": false,
+                        "triangleMesh": {
+                            "mesh": "214"
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "mesh-paintable",
+                    "mesh-paintable": {
+                        "material": "211",
+                        "debugPaintLog": false,
+                        "flipY": true,
+                        "showUvDebug": false,
+                        "planarFallback": false,
+                        "markPaintOnCanvas": false,
+                        "paddingUpdateMode": 1,
+                        "atlasPaddingPx": 0,
+                        "useNearestFiltering": true
+                    },
+                    "active": false
+                }
+            ]
+        },
+        "24": {
+            "name": "Mesh",
+            "parent": "212",
+            "components": [
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "cursorObject": "215",
+                        "collisionGroup": 0,
+                        "cursorRayObject": "213",
+                        "cursorRayScalingAxis": "y",
+                        "rayCastMode": "physx",
+                        "inputObject": "212",
+                        "viewObject": "19"
+                    }
+                },
+                {
+                    "type": "mesh-brush",
+                    "mesh-brush": {
+                        "brushWorldRadius": 0.0099999
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                -0.0582051,
+                0.1071373
+            ],
+            "rotation": [
+                0.9396926,
+                0.0,
+                0.0,
+                -0.3420202
+            ],
+            "scaling": [
+                1.0,
+                0.9999998,
+                0.9999998
+            ]
+        },
+        "249": {
+            "name": "Viz",
+            "parent": "24",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "9",
+                        "material": "26"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                1.7756869397089758e-7,
+                -0.0056102
+            ],
+            "rotation": [
+                0.0000023,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0051999,
+                0.0051999,
+                0.0051999
+            ]
+        },
+        "245": {
+            "name": "Mesh.000",
+            "parent": "256",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "type": "mesh",
+                    "active": false,
+                    "mesh": {
+                        "mesh": "213",
+                        "material": "213"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                7.003545761108398e-7,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.001,
+                1.001,
+                1.001
+            ]
+        },
+        "257": {
+            "link": {
+                "name": "Cube",
+                "file": "vube.glb"
+            },
+            "components": [
+                {
+                    "originalIndex": 0
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "triangleMesh",
+                        "triangleMesh": {
+                            "mesh": "215"
+                        },
+                        "kinematic": true,
+                        "gravity": false
+                    }
+                },
+                {
+                    "type": "mesh-paintable",
+                    "mesh-paintable": {
+                        "material": "214",
+                        "debugPaintLog": false,
+                        "planarFallback": false,
+                        "markPaintOnCanvas": false
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -29.7871685
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "258": {
+            "link": {
+                "name": "Sketchfab_model",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            }
+        },
+        "259": {
+            "link": {
+                "name": "root<Sketchfab_model",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "parent": "258"
+        },
+        "260": {
+            "link": {
+                "name": "GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "parent": "259"
+        },
+        "261": {
+            "link": {
+                "name": "cow_0<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "parent": "260"
+        },
+        "262": {
+            "link": {
+                "name": "Object_4<cow_0<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "parent": "401",
+            "translation": [
+                -0.0119407,
+                0.0810912,
+                0.0182272
+            ],
+            "rotation": [
+                0.496378,
+                2.8337910862319404e-7,
+                1.620281011582847e-7,
+                0.8681064
+            ],
+            "scaling": [
+                0.9999841,
+                0.9999877,
+                0.9999811
+            ],
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "active": true
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "triangleMesh",
+                        "triangleMesh": {
+                            "mesh": "216"
+                        },
+                        "kinematic": true,
+                        "gravity": false
+                    },
+                    "active": true
+                },
+                {
+                    "type": "mesh-paintable",
+                    "mesh-paintable": {
+                        "material": "215",
+                        "debugPaintLog": false,
+                        "planarFallback": false,
+                        "markPaintOnCanvas": false
+                    }
+                }
+            ]
+        },
+        "263": {
+            "link": {
+                "name": "Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "translation": [
+                -1.9574694,
+                1.0296248,
+                0.7343245
+            ],
+            "rotation": [
+                -0.6219475,
+                0.3364266,
+                0.336428,
+                0.621944
+            ],
+            "scaling": [
+                0.0007796,
+                0.0007796,
+                0.0007796
+            ],
+            "name": "Bot",
+            "components": [
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "grab",
+                    "grab": {
+                        "buttonMeshObject": "385",
+                        "hoverMaterial": "241"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.2
+                        },
+                        "kinematic": true,
+                        "gravity": false
+                    }
+                }
+            ]
+        },
+        "264": {
+            "link": {
+                "name": "e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "263"
+        },
+        "265": {
+            "link": {
+                "name": "Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "264"
+        },
+        "266": {
+            "link": {
+                "name": "RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "265",
+            "translation": [
+                0.0,
+                20.1141681,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "267": {
+            "link": {
+                "name": "Box033<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "266"
+        },
+        "268": {
+            "link": {
+                "name": "Box066<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "266",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "animation": {
+                        "preview": true,
+                        "autoplay": true
+                    }
+                }
+            ]
+        },
+        "269": {
+            "link": {
+                "name": "Object_6<Box066<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "268"
+        },
+        "270": {
+            "link": {
+                "name": "Box066_Cube_0<Object_6<Box066<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "269",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "active": false
+                }
+            ]
+        },
+        "271": {
+            "link": {
+                "name": "Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "266"
+        },
+        "272": {
+            "link": {
+                "name": "Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "271"
+        },
+        "273": {
+            "link": {
+                "name": "Body_Bottom_Bot_0<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "272"
+        },
+        "274": {
+            "link": {
+                "name": "Rubber<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "272"
+        },
+        "275": {
+            "link": {
+                "name": "Rubber_Bot_0<Rubber<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "274"
+        },
+        "276": {
+            "link": {
+                "name": "Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "272"
+        },
+        "277": {
+            "link": {
+                "name": "Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "276"
+        },
+        "278": {
+            "link": {
+                "name": "Object_15<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "277"
+        },
+        "279": {
+            "link": {
+                "name": "Body_Bot_0<Object_15<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "278"
+        },
+        "280": {
+            "link": {
+                "name": "Body_Glass_0<Object_15<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "278"
+        },
+        "281": {
+            "link": {
+                "name": "Body_Bulb_Glow_0<Object_15<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "278"
+        },
+        "282": {
+            "link": {
+                "name": "Body_Black_0<Object_15<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "278"
+        },
+        "283": {
+            "link": {
+                "name": "Eye_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "277"
+        },
+        "284": {
+            "link": {
+                "name": "Eye<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "277"
+        },
+        "285": {
+            "link": {
+                "name": "Object_22<Eye<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "284"
+        },
+        "286": {
+            "link": {
+                "name": "Eye_Bulb_Glow_0<Object_22<Eye<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "285"
+        },
+        "287": {
+            "link": {
+                "name": "L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "277"
+        },
+        "288": {
+            "link": {
+                "name": "Hand_00<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "287"
+        },
+        "289": {
+            "link": {
+                "name": "Object_26<Hand_00<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "288"
+        },
+        "290": {
+            "link": {
+                "name": "Hand_00_Bot_0<Object_26<Hand_00<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "289"
+        },
+        "291": {
+            "link": {
+                "name": "L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "287"
+        },
+        "292": {
+            "link": {
+                "name": "Hand_01<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "291"
+        },
+        "293": {
+            "link": {
+                "name": "Object_30<Hand_01<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "292"
+        },
+        "294": {
+            "link": {
+                "name": "Hand_01_Bot_0<Object_30<Hand_01<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "293"
+        },
+        "295": {
+            "link": {
+                "name": "L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "291"
+        },
+        "296": {
+            "link": {
+                "name": "Hand_03<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "295"
+        },
+        "297": {
+            "link": {
+                "name": "Object_34<Hand_03<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "296"
+        },
+        "298": {
+            "link": {
+                "name": "Hand_03_Bot_0<Object_34<Hand_03<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "297"
+        },
+        "299": {
+            "link": {
+                "name": "L_Hand_04_Controller<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "295"
+        },
+        "300": {
+            "link": {
+                "name": "Hand_04<L_Hand_04_Controller<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "299"
+        },
+        "301": {
+            "link": {
+                "name": "Object_38<Hand_04<L_Hand_04_Controller<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "300"
+        },
+        "302": {
+            "link": {
+                "name": "Hand_04_Bot_0<Object_38<Hand_04<L_Hand_04_Controller<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "301"
+        },
+        "303": {
+            "link": {
+                "name": "Hand_04_Hands_Glow_0<Object_38<Hand_04<L_Hand_04_Controller<L_Hand_03_Controller<L_Hand_02_Controller<L_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "301"
+        },
+        "304": {
+            "link": {
+                "name": "R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "277"
+        },
+        "305": {
+            "link": {
+                "name": "Hand_005<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "304"
+        },
+        "306": {
+            "link": {
+                "name": "Object_43<Hand_005<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "305"
+        },
+        "307": {
+            "link": {
+                "name": "Hand_005_Bot_0<Object_43<Hand_005<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "306"
+        },
+        "308": {
+            "link": {
+                "name": "R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "304"
+        },
+        "309": {
+            "link": {
+                "name": "Hand_006<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "308"
+        },
+        "310": {
+            "link": {
+                "name": "Object_47<Hand_006<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "309"
+        },
+        "311": {
+            "link": {
+                "name": "Hand_006_Bot_0<Object_47<Hand_006<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "310"
+        },
+        "312": {
+            "link": {
+                "name": "R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "308"
+        },
+        "313": {
+            "link": {
+                "name": "Hand_007<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "312"
+        },
+        "314": {
+            "link": {
+                "name": "Object_51<Hand_007<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "313"
+        },
+        "315": {
+            "link": {
+                "name": "Hand_007_Bot_0<Object_51<Hand_007<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "314"
+        },
+        "316": {
+            "link": {
+                "name": "R_Hand_04_Controller<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "312"
+        },
+        "317": {
+            "link": {
+                "name": "Hand_008<R_Hand_04_Controller<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "316"
+        },
+        "318": {
+            "link": {
+                "name": "Object_55<Hand_008<R_Hand_04_Controller<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "317"
+        },
+        "319": {
+            "link": {
+                "name": "Hand_008_Bot_0<Object_55<Hand_008<R_Hand_04_Controller<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "318"
+        },
+        "320": {
+            "link": {
+                "name": "Hand_008_Hands_Glow_0<Object_55<Hand_008<R_Hand_04_Controller<R_Hand_03_Controller<R_Hand_02_Controller<R_Hand_01_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "318"
+        },
+        "321": {
+            "link": {
+                "name": "Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "277"
+        },
+        "322": {
+            "link": {
+                "name": "Object_59<Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "321"
+        },
+        "323": {
+            "link": {
+                "name": "_rootJoint<Object_59<Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "322",
+            "skin": "167",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.9999999,
+                3.4603474
+            ]
+        },
+        "324": {
+            "link": {
+                "name": "Bone001_00<_rootJoint<Object_59<Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "323",
+            "skin": "167"
+        },
+        "325": {
+            "link": {
+                "name": "Bone002_01<Bone001_00<_rootJoint<Object_59<Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "324",
+            "skin": "167"
+        },
+        "326": {
+            "link": {
+                "name": "Object_64<Object_59<Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "322",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "skin": "167"
+                    },
+                    "active": true
+                }
+            ]
+        },
+        "327": {
+            "link": {
+                "name": "Object_65<Object_59<Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "322",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "skin": "167"
+                    },
+                    "active": true
+                }
+            ]
+        },
+        "328": {
+            "link": {
+                "name": "Object_63<Object_59<Laser_Lenght_Controller<Body<Mid_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "322"
+        },
+        "329": {
+            "link": {
+                "name": "L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "272"
+        },
+        "330": {
+            "link": {
+                "name": "Engine Leg<L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "329"
+        },
+        "331": {
+            "link": {
+                "name": "Object_68<Engine Leg<L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "330"
+        },
+        "332": {
+            "link": {
+                "name": "Engine Leg_Bot_0<Object_68<Engine Leg<L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "331"
+        },
+        "333": {
+            "link": {
+                "name": "L_Engine_B_Controller<Engine Leg<L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "330"
+        },
+        "334": {
+            "link": {
+                "name": "Engine<L_Engine_B_Controller<Engine Leg<L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "333"
+        },
+        "335": {
+            "link": {
+                "name": "Object_72<Engine<L_Engine_B_Controller<Engine Leg<L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "334"
+        },
+        "336": {
+            "link": {
+                "name": "Engine_Bot_0<Object_72<Engine<L_Engine_B_Controller<Engine Leg<L_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "335"
+        },
+        "337": {
+            "link": {
+                "name": "L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "272"
+        },
+        "338": {
+            "link": {
+                "name": "Engine Leg001<L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "337"
+        },
+        "339": {
+            "link": {
+                "name": "Object_76<Engine Leg001<L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "338"
+        },
+        "340": {
+            "link": {
+                "name": "Engine Leg001_Bot_0<Object_76<Engine Leg001<L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "339"
+        },
+        "341": {
+            "link": {
+                "name": "L_Engine_F_Controller<Engine Leg001<L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "338"
+        },
+        "342": {
+            "link": {
+                "name": "Engine001<L_Engine_F_Controller<Engine Leg001<L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "341"
+        },
+        "343": {
+            "link": {
+                "name": "Object_80<Engine001<L_Engine_F_Controller<Engine Leg001<L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "342"
+        },
+        "344": {
+            "link": {
+                "name": "Engine001_Bot_0<Object_80<Engine001<L_Engine_F_Controller<Engine Leg001<L_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "343"
+        },
+        "345": {
+            "link": {
+                "name": "R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "272"
+        },
+        "346": {
+            "link": {
+                "name": "Engine Leg003<R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "345"
+        },
+        "347": {
+            "link": {
+                "name": "Object_84<Engine Leg003<R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "346"
+        },
+        "348": {
+            "link": {
+                "name": "Engine Leg003_Bot_0<Object_84<Engine Leg003<R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "347"
+        },
+        "349": {
+            "link": {
+                "name": "R_Engine_F_Controller<Engine Leg003<R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "346"
+        },
+        "350": {
+            "link": {
+                "name": "Engine003<R_Engine_F_Controller<Engine Leg003<R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "349"
+        },
+        "351": {
+            "link": {
+                "name": "Object_88<Engine003<R_Engine_F_Controller<Engine Leg003<R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "350"
+        },
+        "352": {
+            "link": {
+                "name": "Engine003_Bot_0<Object_88<Engine003<R_Engine_F_Controller<Engine Leg003<R_Leg_F_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "351"
+        },
+        "353": {
+            "link": {
+                "name": "R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "272"
+        },
+        "354": {
+            "link": {
+                "name": "Engine Leg002<R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "353"
+        },
+        "355": {
+            "link": {
+                "name": "Object_92<Engine Leg002<R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "354"
+        },
+        "356": {
+            "link": {
+                "name": "Engine Leg002_Bot_0<Object_92<Engine Leg002<R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "355"
+        },
+        "357": {
+            "link": {
+                "name": "R_Engine_B_Controller<Engine Leg002<R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "354"
+        },
+        "358": {
+            "link": {
+                "name": "Engine002<R_Engine_B_Controller<Engine Leg002<R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "357"
+        },
+        "359": {
+            "link": {
+                "name": "Object_96<Engine002<R_Engine_B_Controller<Engine Leg002<R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "358"
+        },
+        "360": {
+            "link": {
+                "name": "Engine002_Bot_0<Object_96<Engine002<R_Engine_B_Controller<Engine Leg002<R_Leg_B_Controller<Body_Bottom<Body_Controller<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "359"
+        },
+        "361": {
+            "link": {
+                "name": "Sphere<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "266"
+        },
+        "362": {
+            "link": {
+                "name": "Object_99<Sphere<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "361"
+        },
+        "363": {
+            "link": {
+                "name": "Sphere_Sphere_0<Object_99<Sphere<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "362",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "active": false
+                }
+            ]
+        },
+        "364": {
+            "link": {
+                "name": "Laser<RootNode<Object_2<e9ae5988a1c747d2ad522be4b836d2d8.fbx<Sketchfab_model",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "parent": "266"
+        },
+        "384": {
+            "link": {
+                "name": "Object_2<af585d49a6744930863fad4f09ef9fb6.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "open_container.glb"
+            },
+            "parent": null,
+            "translation": [
+                -2.1260857,
+                0.6836661,
+                1.8305518
+            ],
+            "rotation": [
+                -0.7071066,
+                0.0,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                0.28,
+                0.2799999,
+                0.2799999
+            ],
+            "name": "Can",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "active": false
+                }
+            ]
+        },
+        "386": {
+            "link": {
+                "name": "Object_4<cow_0<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "translation": [
+                -0.1233584,
+                -0.0002671,
+                -0.0000469
+            ],
+            "rotation": [
+                -1.0430812125150625e-7,
+                0.0,
+                5.147683168615914e-8,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.9999997,
+                1.0000001
+            ],
+            "parent": "262",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "active": true,
+                    "mesh": {
+                        "material": "232"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "active": false,
+                    "physx": {
+                        "kinematic": true,
+                        "shape": "triangleMesh",
+                        "triangleMesh": {
+                            "mesh": "216"
+                        },
+                        "gravity": false
+                    }
+                }
+            ]
+        },
+        "387": {
+            "name": "#D2D4CBFF",
+            "parent": "401",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.0199999
+                        },
+                        "gravity": false,
+                        "kinematic": true
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "9",
+                        "material": "240"
+                    }
+                }
+            ],
+            "scaling": [
+                0.0199998,
+                0.0199999,
+                0.0199998
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "388": {
+            "name": "#666466",
+            "scaling": [
+                0.0199998,
+                0.0199999,
+                0.0199998
+            ],
+            "parent": "401",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.0199999
+                        },
+                        "gravity": false,
+                        "kinematic": true
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "233",
+                        "mesh": "9"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0107254,
+                0.0000114,
+                -0.0634437
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "389": {
+            "name": "#d7b2a3",
+            "translation": [
+                0.0525703,
+                0.0000126,
+                -0.0634425
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0199998,
+                0.0199999,
+                0.0199998
+            ],
+            "parent": "401",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.0199999
+                        },
+                        "gravity": false,
+                        "kinematic": true
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "234",
+                        "mesh": "9"
+                    }
+                }
+            ]
+        },
+        "390": {
+            "name": "#8bbce3",
+            "translation": [
+                0.0525703,
+                0.0000141,
+                -0.0011646
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0199998,
+                0.0199999,
+                0.0199998
+            ],
+            "parent": "401",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.0199999
+                        },
+                        "kinematic": true,
+                        "gravity": false
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "235",
+                        "mesh": "9"
+                    }
+                }
+            ]
+        },
+        "391": {
+            "name": "#c9a56d",
+            "translation": [
+                0.1077415,
+                0.0000195,
+                -0.0011591
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0199998,
+                0.0199999,
+                0.0199998
+            ],
+            "parent": "401",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.0199999
+                        },
+                        "gravity": false
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "236",
+                        "mesh": "9"
+                    }
+                }
+            ]
+        },
+        "392": {
+            "name": "#000000FF",
+            "translation": [
+                0.1077413,
+                0.000027,
+                -0.0570142
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0199998,
+                0.0199999,
+                0.0199998
+            ],
+            "parent": "401",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.0199999
+                        },
+                        "gravity": false
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "237",
+                        "mesh": "9"
+                    }
+                }
+            ]
+        },
+        "393": {
+            "name": "Screen",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "238"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "canvas-ai-chat",
+                    "canvas-ai-chat": {
+                        "material": "238",
+                        "marker": "394",
+                        "apiKey": "AIzaSyCSV0W3WGQgrup44_29go3ct5DazkBJbG8",
+                        "canvasSize": 512.0
+                    },
+                    "active": true
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "gravity": false,
+                        "kinematic": true,
+                        "shape": "triangleMesh",
+                        "triangleMesh": {
+                            "mesh": "7",
+                            "scaling": [
+                                0.2,
+                                0.2,
+                                0.2
+                            ]
+                        }
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                107.8279418,
+                11.3627929,
+                467.5825195
+            ],
+            "rotation": [
+                -0.4751217,
+                0.5236977,
+                0.5236997,
+                -0.4751195
+            ],
+            "scaling": [
+                256.5007629,
+                256.4335632,
+                256.3473815
+            ],
+            "parent": "263"
+        },
+        "394": {
+            "name": "Mesh.001",
+            "parent": "393",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "9",
+                        "material": "240"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0108,
+                0.0108,
+                0.0108
+            ]
+        },
+        "395": {
+            "name": "CursorRight2",
+            "translation": [
+                0.0,
+                0.0,
+                -2.384185791015625e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parent": "205",
+            "components": [
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "ray right"
+                    }
+                },
+                {
+                    "type": "vr-mode-active-switch"
+                }
+            ]
+        },
+        "396": {
+            "name": "CursorRayRight2",
+            "translation": [
+                2.384185791015625e-7,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0000001,
+                1.0000001
+            ],
+            "parent": "398"
+        },
+        "397": {
+            "name": "CursorRayMeshRight",
+            "translation": [
+                2.384185791015625e-7,
+                0.0002447,
+                0.0
+            ],
+            "rotation": [
+                0.7072796,
+                0.0,
+                0.0,
+                0.7069339
+            ],
+            "scaling": [
+                0.0049998,
+                0.3499999,
+                0.0049999
+            ],
+            "parent": "396",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "128",
+                        "mesh": "10"
+                    }
+                }
+            ]
+        },
+        "398": {
+            "name": "Mesh",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.9999998,
+                0.9999998
+            ],
+            "parent": "395",
+            "components": [
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "collisionGroup": 0,
+                        "cursorObject": "215",
+                        "cursorRayObject": "396",
+                        "cursorRayScalingAxis": "y",
+                        "inputObject": "395",
+                        "rayCastMode": "physx",
+                        "viewObject": "398"
+                    }
+                }
+            ]
+        },
+        "399": {
+            "name": "Viz",
+            "translation": [
+                0.0,
+                1.7756869397089758e-7,
+                -0.0056102
+            ],
+            "rotation": [
+                0.0000023,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0051999,
+                0.0051999,
+                0.0051999
+            ],
+            "parent": "398",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "26",
+                        "mesh": "9"
+                    }
+                }
+            ]
+        },
+        "400": {
+            "name": "UI/GrabableModel",
+            "parent": null,
+            "components": [
+                {
+                    "type": "cinematic_intro",
+                    "cinematic_intro": {
+                        "videoSrc": "enso.mp4",
+                        "demoModelUrl": "shiba.glb",
+                        "demoObjects": "401"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "grab",
+                    "grab": {
+                        "buttonMeshObject": "411",
+                        "hoverMaterial": "239"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.1
+                        },
+                        "kinematic": true,
+                        "gravity": false
+                    }
+                }
+            ],
+            "translation": [
+                -2.4999997,
+                1.7500001,
+                1.1575535
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "401": {
+            "name": "DemoObjects",
+            "parent": "126",
+            "translation": [
+                0.0,
+                1.1920928955078125e-7,
+                3.5762786865234375e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.001,
+                0.001,
+                0.001
+            ]
+        },
+        "385": {
+            "name": "Empty.001",
+            "scaling": [
+                200.0,
+                200.0092773,
+                200.0092773
+            ],
+            "parent": "263",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "242",
+                        "mesh": "9"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.7071066,
+                0.0,
+                0.0,
+                0.7071068
+            ]
+        },
+        "382": {
+            "name": "AlphaSlider",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "parent": "403",
+            "components": [
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "physx",
+                    "active": true,
+                    "physx": {
+                        "kinematic": true,
+                        "shape": "triangleMesh",
+                        "triangleMesh": {
+                            "mesh": "7",
+                            "scaling": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "gravity": false
+                    }
+                },
+                {
+                    "type": "alpha-slider-canvas",
+                    "alpha-slider-canvas": {
+                        "targetObject": "400",
+                        "uiMaterial": "243",
+                        "marker": "410",
+                        "alpha": 1.0
+                    }
+                }
+            ]
+        },
+        "406": {
+            "name": "Viz",
+            "parent": "403",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "243",
+                        "mesh": "7"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "403": {
+            "name": "Slider",
+            "parent": null,
+            "translation": [
+                -2.4791171,
+                1.2238693,
+                0.9246273
+            ],
+            "rotation": [
+                5.811456276205718e-7,
+                0.0000016,
+                3.576278686523438e-7,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "capsule",
+                        "translationOffset": [
+                            0.0,
+                            -0.15,
+                            0.0
+                        ],
+                        "capsule": {
+                            "radius": 0.0199999,
+                            "halfHeight": 0.1
+                        },
+                        "kinematic": true,
+                        "gravity": false
+                    },
+                    "active": true
+                },
+                {
+                    "type": "grab",
+                    "grab": {
+                        "buttonMeshObject": "385",
+                        "hoverMaterial": "128"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                }
+            ]
+        },
+        "407": {
+            "name": "Holder",
+            "parent": "403",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "11",
+                        "material": "241"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0,
+                -0.1504618,
+                -6.705465693812585e-7
+            ],
+            "rotation": [
+                -0.000039,
+                -0.000034,
+                0.7071058,
+                0.7071077
+            ],
+            "scaling": [
+                0.0167996,
+                0.1072895,
+                0.0167999
+            ]
+        },
+        "410": {
+            "name": "Mesh.001",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -3.129238734800311e-7,
+                0.0000029,
+                1.0430586883103389e-7,
+                1.0
+            ],
+            "scaling": [
+                0.0054004,
+                0.005399,
+                0.0053977
+            ],
+            "parent": "382",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "material": "240",
+                        "mesh": "9"
+                    }
+                }
+            ]
+        },
+        "411": {
+            "name": "Mesh",
+            "parent": "400",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "239"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.1066922,
+                1.0
+            ]
+        },
+        "412": {
+            "link": {
+                "name": "Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "translation": [
+                0.0,
+                -0.0014629,
+                -0.0
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.0099999,
+                0.0099999,
+                0.0099999
+            ],
+            "parent": "428"
+        },
+        "413": {
+            "link": {
+                "name": "zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "412"
+        },
+        "414": {
+            "link": {
+                "name": "\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-5-7134718.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "413"
+        },
+        "415": {
+            "link": {
+                "name": "Object_3<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-5-7134718.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "414"
+        },
+        "416": {
+            "link": {
+                "name": "\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-4-3602800.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "413"
+        },
+        "417": {
+            "link": {
+                "name": "Object_5<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-4-3602800.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "416"
+        },
+        "418": {
+            "link": {
+                "name": "\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-3-7134718.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "413"
+        },
+        "419": {
+            "link": {
+                "name": "Object_7<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-3-7134718.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "418"
+        },
+        "420": {
+            "link": {
+                "name": "Object_8<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-3-7134718.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "418"
+        },
+        "421": {
+            "link": {
+                "name": "Object_9<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-3-7134718.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "418"
+        },
+        "422": {
+            "link": {
+                "name": "\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-2-10233600.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "413"
+        },
+        "423": {
+            "link": {
+                "name": "Object_11<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-2-10233600.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "422"
+        },
+        "424": {
+            "link": {
+                "name": "\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-1-10233600.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "413"
+        },
+        "425": {
+            "link": {
+                "name": "Object_13<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-1-10233600.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "424"
+        },
+        "426": {
+            "link": {
+                "name": "\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-0-10233600.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "413"
+        },
+        "427": {
+            "link": {
+                "name": "Object_15<\\sketchfab-data\\processing\\models\\3526202397b74327bb73a1b91d549ec1\\2144c95689d84d50b5db84ac361b7d2d\\8a345424da5c4ec99e830150265a5222\\preprocess\\SubTool-0-10233600.OBJ<zbrush_concat.osgb.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "parent": "426"
+        },
+        "428": {
+            "name": "UI/GrabableModel",
+            "translation": [
+                -2.4999997,
+                1.7500001,
+                1.1575535
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parent": null,
+            "components": [
+                {
+                    "type": "cinematic_intro",
+                    "active": true,
+                    "cinematic_intro": {
+                        "demoModelUrl": "shiba.glb",
+                        "demoObjects": "401",
+                        "videoSrc": "enso.mp4"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "grab",
+                    "grab": {
+                        "buttonMeshObject": "429",
+                        "hoverMaterial": "20"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.1
+                        },
+                        "gravity": false
+                    }
+                }
+            ]
+        },
+        "429": {
+            "name": "Mesh",
+            "parent": "428",
+            "components": [
+                {
+                    "type": "mesh",
+                    "active": true,
+                    "mesh": {
+                        "material": "239",
+                        "mesh": "8"
+                    }
+                }
+            ]
+        }
+    },
+    "meshes": {
+        "7": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            },
+            "importScaling": 1.0,
+            "simplify": false,
+            "simplifyTarget": 0.5
+        },
+        "8": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            },
+            "importScaling": 0.05
+        },
+        "9": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "47": {
+            "link": {
+                "name": "controller_plyShape",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "48": {
+            "link": {
+                "name": "controller_plyShape.003",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "49": {
+            "link": {
+                "name": "controller_plyShape.005",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "50": {
+            "link": {
+                "name": "controller_plyShape.006",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "51": {
+            "link": {
+                "name": "controller_plyShape.004",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "52": {
+            "link": {
+                "name": "controller_plyShape.002",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "89": {
+            "link": {
+                "name": "controller_plyShape.004",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "90": {
+            "link": {
+                "name": "controller_plyShape.005",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "91": {
+            "link": {
+                "name": "controller_plyShape",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "92": {
+            "link": {
+                "name": "controller_plyShape.002",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "93": {
+            "link": {
+                "name": "controller_plyShape.003",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "94": {
+            "link": {
+                "name": "controller_plyShape.001",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "132": {
+            "link": {
+                "name": "Mesh",
+                "file": "models\\hand-left.glb"
+            },
+            "name": "HandLeft"
+        },
+        "165": {
+            "link": {
+                "name": "Mesh.001",
+                "file": "models\\hand-right.glb"
+            },
+            "name": "HandRight"
+        },
+        "195": {
+            "link": {
+                "name": "Cube.001",
+                "file": "models\\button.glb"
+            },
+            "name": "Button"
+        },
+        "207": {
+            "link": {
+                "name": "TeleportIndicator",
+                "file": "models\\teleport-indicator.glb"
+            }
+        },
+        "208": {
+            "link": {
+                "name": "LP_ProjectionDone_Material_0",
+                "file": "child_dino_test.glb"
+            },
+            "importScaling": 0.1
+        },
+        "209": {
+            "link": {
+                "name": "LP_ProjectionDone_Material_0-uv1",
+                "file": "child_dino_test.glb"
+            },
+            "importScaling": 0.1
+        },
+        "210": {
+            "link": {
+                "name": "Group18985_default_0",
+                "file": "shiba.glb"
+            },
+            "importScaling": 1.0
+        },
+        "211": {
+            "link": {
+                "name": "Box002_default_0",
+                "file": "shiba.glb"
+            },
+            "importScaling": 1.0
+        },
+        "212": {
+            "link": {
+                "name": "Object001_default_0",
+                "file": "shiba.glb"
+            },
+            "importScaling": 1.0
+        },
+        "213": {
+            "link": {
+                "name": "Object_0",
+                "file": "white_cow_of_azure_lane.glb"
+            },
+            "importScaling": 1.0
+        },
+        "214": {
+            "link": {
+                "name": "Object_0-uv1",
+                "file": "white_cow_of_azure_lane.glb"
+            },
+            "importScaling": 0.1
+        },
+        "215": {
+            "link": {
+                "name": "Cube",
+                "file": "vube.glb"
+            }
+        },
+        "216": {
+            "link": {
+                "name": "Object_0",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "importScaling": 0.0599999
+        },
+        "217": {
+            "link": {
+                "name": "Box066_Cube_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "218": {
+            "link": {
+                "name": "Body_Bottom_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "219": {
+            "link": {
+                "name": "Rubber_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "220": {
+            "link": {
+                "name": "Body_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "221": {
+            "link": {
+                "name": "Body_Glass_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "222": {
+            "link": {
+                "name": "Body_Bulb_Glow_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "223": {
+            "link": {
+                "name": "Body_Black_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "224": {
+            "link": {
+                "name": "Eye_Bulb_Glow_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "225": {
+            "link": {
+                "name": "Hand_00_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "226": {
+            "link": {
+                "name": "Hand_01_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "227": {
+            "link": {
+                "name": "Hand_03_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "228": {
+            "link": {
+                "name": "Hand_04_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "229": {
+            "link": {
+                "name": "Hand_04_Hands_Glow_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "230": {
+            "link": {
+                "name": "Hand_005_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "231": {
+            "link": {
+                "name": "Hand_006_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "232": {
+            "link": {
+                "name": "Hand_007_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "233": {
+            "link": {
+                "name": "Hand_008_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "234": {
+            "link": {
+                "name": "Hand_008_Hands_Glow_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "235": {
+            "link": {
+                "name": "Laser_Laser_Outline_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "236": {
+            "link": {
+                "name": "Laser_Laser_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "237": {
+            "link": {
+                "name": "Engine Leg_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "238": {
+            "link": {
+                "name": "Engine_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "239": {
+            "link": {
+                "name": "Engine Leg001_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "240": {
+            "link": {
+                "name": "Engine001_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "241": {
+            "link": {
+                "name": "Engine Leg003_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "242": {
+            "link": {
+                "name": "Engine003_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "243": {
+            "link": {
+                "name": "Engine Leg002_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "244": {
+            "link": {
+                "name": "Engine002_Bot_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "245": {
+            "link": {
+                "name": "Sphere_Sphere_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "246": {
+            "link": {
+                "name": "Object_0",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "247": {
+            "link": {
+                "name": "Object_1",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "248": {
+            "link": {
+                "name": "Object_2",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "249": {
+            "link": {
+                "name": "Object_3",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "250": {
+            "link": {
+                "name": "Object_4",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "251": {
+            "link": {
+                "name": "Object_5",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "252": {
+            "link": {
+                "name": "Object_6",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "253": {
+            "link": {
+                "name": "Object_7",
+                "file": "cute_cat_low-poly (1).glb"
+            }
+        },
+        "254": {
+            "link": {
+                "name": "Object_0",
+                "file": "open_container.glb"
+            }
+        },
+        "255": {
+            "link": {
+                "name": "Object_0",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "256": {
+            "link": {
+                "name": "Object_1",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "257": {
+            "link": {
+                "name": "Object_2",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "258": {
+            "link": {
+                "name": "Object_3",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "259": {
+            "link": {
+                "name": "Object_4",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "260": {
+            "link": {
+                "name": "Object_5",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "261": {
+            "link": {
+                "name": "Object_6",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "262": {
+            "link": {
+                "name": "Object_7",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        }
+    },
+    "textures": {
+        "44": {
+            "link": {
+                "name": "texture_0",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "45": {
+            "link": {
+                "name": "texture_1",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "86": {
+            "link": {
+                "name": "texture_0",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "87": {
+            "link": {
+                "name": "texture_1",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "88": {
+            "link": {
+                "name": "texture_0",
+                "file": "child_dino_test.glb"
+            }
+        },
+        "89": {
+            "link": {
+                "name": "texture_0",
+                "file": "shiba.glb"
+            }
+        },
+        "90": {
+            "link": {
+                "name": "texture_0",
+                "file": "white_cow_of_azure_lane.glb"
+            }
+        },
+        "91": {
+            "link": {
+                "name": "texture_0",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            }
+        },
+        "92": {
+            "link": {
+                "name": "texture_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "93": {
+            "link": {
+                "name": "texture_1",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "94": {
+            "link": {
+                "name": "texture_2",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "95": {
+            "link": {
+                "name": "texture_3",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "96": {
+            "link": {
+                "name": "texture_4",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        }
+    },
+    "images": {
+        "42": {
+            "link": {
+                "name": "Image_0",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "maxSize": [
+                1024,
+                1024
+            ]
+        },
+        "43": {
+            "link": {
+                "name": "Image_1",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "maxSize": [
+                256,
+                256
+            ]
+        },
+        "84": {
+            "link": {
+                "name": "Image_0",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "maxSize": [
+                1024,
+                1024
+            ]
+        },
+        "85": {
+            "link": {
+                "name": "Image_1",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "maxSize": [
+                256,
+                256
+            ]
+        },
+        "86": {
+            "link": {
+                "name": "image_0",
+                "file": "child_dino_test.glb"
+            },
+            "maxSize": [
+                2048,
+                2048
+            ],
+            "compression": "none",
+            "stream": false
+        },
+        "87": {
+            "link": {
+                "name": "image_0",
+                "file": "shiba.glb"
+            },
+            "stream": false,
+            "compression": "none"
+        },
+        "88": {
+            "link": {
+                "name": "image_0",
+                "file": "white_cow_of_azure_lane.glb"
+            }
+        },
+        "89": {
+            "link": {
+                "name": "unique_tex_Image_0_1762287289",
+                "file": "white_cow_of_azure_lane.glb"
+            }
+        },
+        "90": {
+            "link": {
+                "name": "unique_tex_Image_0_1762288179",
+                "file": "white_cow_of_azure_lane.glb"
+            }
+        },
+        "91": {
+            "link": {
+                "name": "tri_atlas_1762290245",
+                "file": "white_cow_of_azure_lane.glb"
+            }
+        },
+        "92": {
+            "link": {
+                "name": "image_0",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            }
+        },
+        "93": {
+            "link": {
+                "name": "image_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "94": {
+            "link": {
+                "name": "image_1",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "95": {
+            "link": {
+                "name": "image_2",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "96": {
+            "link": {
+                "name": "image_3",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "97": {
+            "link": {
+                "name": "image_4",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "effectColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "font": "230"
+            }
+        },
+        "20": {
+            "name": "semitransparent",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.8235294,
+                    0.8313724,
+                    0.7960783,
+                    0.1764705
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "ambientFactor": 0.5
+            },
+            "pipeline": "34",
+            "Flat": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5137255
+                ]
+            }
+        },
+        "22": {
+            "name": "Pink",
+            "Phong": {
+                "diffuseColor": [
+                    0.9098039,
+                    0.0,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.999911299019004e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 10,
+                "ambientColor": [
+                    0.317647,
+                    0.0,
+                    0.2165777,
+                    1.0
+                ]
+            },
+            "pipeline": "35",
+            "Flat": {
+                "flatTexture": "45"
+            }
+        },
+        "25": {
+            "name": "Yellow",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.8039215,
+                    0.0,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.3843137,
+                    0.3089579,
+                    0.0,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "26": {
+            "name": "Green",
+            "Phong": {
+                "diffuseColor": [
+                    0.1529411,
+                    0.7882353,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.0,
+                    0.2352941,
+                    0.1437908,
+                    1.0
+                ]
+            },
+            "pipeline": "253",
+            "Flat": {
+                "color": [
+                    0.0470588,
+                    1.0,
+                    0.0,
+                    0.8313725
+                ]
+            }
+        },
+        "46": {
+            "link": {
+                "name": "skel_controller_materials_controllerMTL1",
+                "file": "models\\oculus-touch-v2-left.glb"
+            },
+            "name": "ControllerLeft",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "88": {
+            "link": {
+                "name": "skel_controller_materials_controllerMTL",
+                "file": "models\\oculus-touch-v2-right.glb"
+            },
+            "name": "ControllerRight",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "128": {
+            "name": "Cursor",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1
+            },
+            "pipeline": "34"
+        },
+        "131": {
+            "link": {
+                "name": "Default_Material",
+                "file": "models\\hand-left.glb"
+            },
+            "name": "HandLeft"
+        },
+        "164": {
+            "link": {
+                "name": "lambert2",
+                "file": "models\\hand-right.glb"
+            },
+            "name": "HandRight",
+            "pipeline": null
+        },
+        "201": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "name": "TextAccent",
+            "Text": {
+                "color": [
+                    0.9098039,
+                    0.0,
+                    0.5411764,
+                    1.0
+                ],
+                "font": "230"
+            }
+        },
+        "202": {
+            "name": "Dark",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.1686274,
+                    0.1686257,
+                    0.1686257,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.0274509,
+                    0.0274507,
+                    0.0274507,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "203": {
+            "name": "GreenHover",
+            "Phong": {
+                "diffuseColor": [
+                    0.4894117,
+                    0.917647,
+                    0.7511102,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.0,
+                    0.3294117,
+                    0.2013071,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "206": {
+            "link": {
+                "name": "TeleportIndicator",
+                "file": "models\\teleport-indicator.glb"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.6862745,
+                    0.6862676,
+                    0.6862676,
+                    1.0
+                ]
+            },
+            "pipeline": "34",
+            "Flat": {
+                "color": [
+                    0.8392156,
+                    0.8392072,
+                    0.8392072,
+                    1.0
+                ]
+            }
+        },
+        "207": {
+            "link": {
+                "name": "Material",
+                "file": "child_dino_test.glb"
+            },
+            "pipeline": "35",
+            "Flat": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        "208": {
+            "link": {
+                "name": "default",
+                "file": "shiba.glb"
+            }
+        },
+        "209": {
+            "link": {
+                "name": "default",
+                "file": "shiba.glb"
+            },
+            "name": "default Copy"
+        },
+        "210": {
+            "link": {
+                "name": "default",
+                "file": "shiba.glb"
+            },
+            "name": "default Copy"
+        },
+        "211": {
+            "link": {
+                "name": "material",
+                "file": "white_cow_of_azure_lane.glb"
+            },
+            "pipeline": "223",
+            "Physical": {
+                "albedoTexture": null,
+                "metallicFactor": 0.4,
+                "roughnessFactor": 0.3,
+                "clearCoatRoughness": 1.0,
+                "clearCoatFactor": 1.0
+            }
+        },
+        "212": {
+            "name": "sky",
+            "pipeline": "229",
+            "Sky": {
+                "texture": "90"
+            }
+        },
+        "213": {
+            "link": {
+                "name": "material",
+                "file": "white_cow_of_azure_lane.glb"
+            },
+            "pipeline": "252",
+            "Physical": {
+                "albedoTexture": "90",
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.3,
+                "albedoColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.6980391
+                ]
+            },
+            "name": "material Copy"
+        },
+        "214": {
+            "link": {
+                "name": "Material",
+                "file": "vube.glb"
+            },
+            "pipeline": "38",
+            "Phong": {
+                "diffuseTexture": "90"
+            }
+        },
+        "215": {
+            "link": {
+                "name": "material",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "pipeline": "223",
+            "Physical": {
+                "albedoTexture": "91",
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.3,
+                "clearCoatRoughness": 1.0,
+                "clearCoatFactor": 1.0,
+                "albedoColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        "216": {
+            "link": {
+                "name": "Cube",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "217": {
+            "link": {
+                "name": "material",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "pipeline": "252",
+            "Physical": {
+                "metallicFactor": 1.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        "218": {
+            "link": {
+                "name": "Glass",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "pipeline": "222",
+            "Physical": {
+                "metallicFactor": 0.0
+            }
+        },
+        "219": {
+            "link": {
+                "name": "Bulb_Glow",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "220": {
+            "link": {
+                "name": "Black",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "221": {
+            "link": {
+                "name": "Hands_Glow",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "222": {
+            "link": {
+                "name": "Laser_Outline",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "223": {
+            "link": {
+                "name": "Laser",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "pipeline": "253",
+            "Flat": {
+                "color": [
+                    0.2936716,
+                    0.871975,
+                    0.972549,
+                    1.0
+                ]
+            }
+        },
+        "224": {
+            "link": {
+                "name": "Sphere",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        },
+        "225": {
+            "link": {
+                "name": "material_0",
+                "file": "cute_cat_low-poly (1).glb"
+            },
+            "pipeline": "254",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4745097
+                ]
+            }
+        },
+        "226": {
+            "link": {
+                "name": "material_1",
+                "file": "cute_cat_low-poly (1).glb"
+            },
+            "pipeline": "254",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4745097
+                ]
+            }
+        },
+        "227": {
+            "link": {
+                "name": "material_2",
+                "file": "cute_cat_low-poly (1).glb"
+            },
+            "pipeline": "254",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4745097
+                ]
+            }
+        },
+        "228": {
+            "link": {
+                "name": "material_3",
+                "file": "cute_cat_low-poly (1).glb"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4745097
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4745097
+                ]
+            },
+            "pipeline": "254"
+        },
+        "229": {
+            "link": {
+                "name": "material_4",
+                "file": "cute_cat_low-poly (1).glb"
+            },
+            "pipeline": "254",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4745097
+                ]
+            }
+        },
+        "230": {
+            "link": {
+                "name": "material_5",
+                "file": "cute_cat_low-poly (1).glb"
+            },
+            "pipeline": "254",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4745097
+                ]
+            }
+        },
+        "231": {
+            "link": {
+                "name": "initialShadingGroup",
+                "file": "open_container.glb"
+            },
+            "pipeline": "223",
+            "Physical": {
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.6999999,
+                "albedoColor": [
+                    1.0,
+                    0.972549,
+                    0.972549,
+                    0.7764706
+                ]
+            }
+        },
+        "232": {
+            "link": {
+                "name": "material",
+                "file": "models\\white_cow_of_azure_lane.glb"
+            },
+            "pipeline": "223",
+            "Physical": {
+                "albedoTexture": "91",
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.3,
+                "clearCoatRoughness": 1.0,
+                "clearCoatFactor": 1.0,
+                "albedoColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "name": "material Copy"
+        },
+        "233": {
+            "name": "White Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.4,
+                    0.3921568,
+                    0.4,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "234": {
+            "name": "White Copy Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.8431372,
+                    0.6980392,
+                    0.6392157,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "235": {
+            "name": "White Copy Copy Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.545098,
+                    0.7372549,
+                    0.890196,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "236": {
+            "name": "White Copy Copy Copy Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.7882353,
+                    0.6470588,
+                    0.4274509,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "237": {
+            "name": "White Copy Copy Copy Copy Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
+        },
+        "238": {
+            "name": "ui",
+            "pipeline": "35",
+            "Flat": {
+                "flatTexture": "45"
+            }
+        },
+        "239": {
+            "name": "transparent",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.8235294,
+                    0.8313724,
+                    0.7960783,
+                    0.1764705
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "ambientFactor": 0.5
+            },
+            "pipeline": "34",
+            "Flat": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "240": {
+            "name": "semitransparentMisc",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.8235294,
+                    0.8313724,
+                    0.7960783,
+                    0.1764705
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "ambientFactor": 0.5
+            },
+            "pipeline": "34",
+            "Flat": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5137255
+                ]
+            }
+        },
+        "241": {
+            "name": "semitransparent Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.8235294,
+                    0.8313724,
+                    0.7960783,
+                    0.1764705
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "ambientFactor": 0.5
+            },
+            "pipeline": "34",
+            "Flat": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5137255
+                ]
+            }
+        },
+        "242": {
+            "name": "transparent Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.8235294,
+                    0.8313724,
+                    0.7960783,
+                    0.1764705
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "ambientFactor": 0.5
+            },
+            "pipeline": "34",
+            "Flat": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "243": {
+            "name": "SliderUi",
+            "pipeline": "35",
+            "Flat": {
+                "flatTexture": "45"
+            }
+        },
+        "244": {
+            "name": "semitransparentMisc Copy",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "diffuseColor": [
+                    0.8235294,
+                    0.8313724,
+                    0.7960783,
+                    0.1764705
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "ambientFactor": 0.5
+            },
+            "pipeline": "34",
+            "Flat": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5137255
+                ]
+            }
+        },
+        "245": {
+            "name": "SliderHolder",
+            "pipeline": "34"
+        },
+        "246": {
+            "link": {
+                "name": "material_0",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "247": {
+            "link": {
+                "name": "material_1",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "248": {
+            "link": {
+                "name": "material_2",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "249": {
+            "link": {
+                "name": "material_3",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        "250": {
+            "link": {
+                "name": "material_4",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        },
+        "251": {
+            "link": {
+                "name": "material_5",
+                "file": "Assets\\cute_cat_low-poly.glb"
+            }
+        }
+    },
+    "shaders": {
+        "2": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "28": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "30": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "32": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "37": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        },
+        "217": {
+            "link": {
+                "name": "Background.frag",
+                "file": "default"
+            }
+        },
+        "218": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "220": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "221": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "224": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "225": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "227": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "228": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        },
+        "250": {
+            "link": {
+                "name": "AtmosphericSky.frag",
+                "file": "default"
+            }
+        },
+        "251": {
+            "link": {
+                "name": "Color.frag",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "ENSO.wlp",
+            "version": [
+                1,
+                5,
+                0,
+                5
+            ],
+            "customIndexHtml": true
+        },
+        "scripting": {
+            "components": {
+                "output": "ENSO.wlp-bundle.js"
+            },
+            "application": {
+                "output": "ENSO.wlp-app.js",
+                "bundling": "esbuild"
+            }
+        },
+        "runtime": {
+            "visualizeColliders": false,
+            "loadUncompressedImagesAsBitmap": false,
+            "enableRuntimeGltf": true
+        },
+        "rendering": {
+            "hdr": {
+                "exposure": 1.5
+            },
+            "environment": {
+                "bakingMode": "sky",
+                "material": "212",
+                "enabled": true
+            },
+            "clearColor": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "prioritizeReverseZ": false
+        },
+        "xr": {
+            "leftEyeObject": "18",
+            "rightEyeObject": "19",
+            "webxr": {
+                "optionalFeatures": {
+                    "local-floor": true
+                },
+                "requiredFeatures": {
+                    "occlusion": false,
+                    "light-estimation": false
+                }
+            },
+            "ar": {
+                "enable": true
+            },
+            "vr": {
+                "enable": true
+            }
+        },
+        "physx": {
+            "enable": true
+        },
+        "editor": {
+            "pluginsPaths": [
+                "plugins/CustomPlugin.mjs"
+            ]
+        }
+    },
+    "animations": {
+        "1": {
+            "link": {
+                "name": "Take 001",
+                "file": "obot_-_cute_robot_challenge.glb"
+            }
+        }
+    },
+    "skins": {
+        "133": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "name": "HandLeftSkin",
+            "joints": [
+                "139",
+                "140",
+                "141",
+                "142",
+                "143",
+                "144",
+                "145",
+                "146",
+                "147",
+                "148",
+                "149",
+                "150",
+                "151",
+                "152",
+                "153",
+                "154",
+                "155",
+                "156",
+                "157",
+                "158",
+                "159",
+                "160",
+                "161",
+                "162",
+                "163"
+            ]
+        },
+        "166": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "name": "HandRightSkin",
+            "joints": [
+                "169",
+                "170",
+                "171",
+                "172",
+                "173",
+                "174",
+                "175",
+                "176",
+                "177",
+                "178",
+                "179",
+                "180",
+                "181",
+                "182",
+                "183",
+                "184",
+                "185",
+                "186",
+                "187",
+                "188",
+                "189",
+                "190",
+                "191",
+                "192",
+                "193"
+            ]
+        },
+        "167": {
+            "link": {
+                "name": "skin_0",
+                "file": "obot_-_cute_robot_challenge.glb"
+            },
+            "joints": [
+                "323",
+                "324",
+                "325"
+            ]
+        }
+    },
+    "pipelines": {
+        "34": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            },
+            "features": {
+                "ALPHA_MASKED": true
+            },
+            "sampleAlphaToCoverage": true,
+            "depthTest": true
+        },
+        "254": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true,
+                "DEPRECATED_AMBIENT_FACTOR": true,
+                "GLOBAL_ILLUMINATION": true,
+                "VERTEX_COLORS": true,
+                "TEXTURED": true
+            },
+            "name": "Phong Opaque Vertex"
+        },
+        "33": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "37": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true,
+                "DEPRECATED_AMBIENT_FACTOR": true,
+                "GLOBAL_ILLUMINATION": true,
+                "VERTEX_COLORS": true
+            },
+            "doubleSided": false,
+            "sampleAlphaToCoverage": true
+        },
+        "35": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            },
+            "doubleSided": true,
+            "features": {
+                "ALPHA_MASKED": true,
+                "VERTEX_COLORS": true
+            },
+            "sampleAlphaToCoverage": true
+        },
+        "36": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "38": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true,
+                "GLOBAL_ILLUMINATION": true,
+                "DEPRECATED_AMBIENT_FACTOR": true,
+                "GLOBAL_ILLUMINATION_PROBE_VOLUME": true,
+                "VERTEX_COLORS": false,
+                "ALPHA_MASKED": true
+            },
+            "depthTest": true,
+            "sampleAlphaToCoverage": true
+        },
+        "39": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        },
+        "40": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "252": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "SEPARATE_OCCLUSION_TEXTURE": true,
+                "GLOBAL_ILLUMINATION": true,
+                "CLEARCOAT": true
+            },
+            "name": "Physical Opaque Textured Transparent",
+            "blending": false,
+            "blendSrcRgb": "source color",
+            "blendSrcAlpha": "source alpha",
+            "blendDestRgb": "destination color",
+            "blendDestAlpha": "destination alpha",
+            "depthFunction": "less or equal",
+            "depthTest": true,
+            "blendEqRgb": "add",
+            "blendEqAlpha": "add",
+            "sampleAlphaToCoverage": true,
+            "colorWrite": {
+                "alpha": true,
+                "blue": true,
+                "green": true,
+                "red": true
+            },
+            "depthWrite": true
+        },
+        "219": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "222": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            },
+            "features": {
+                "SEPARATE_OCCLUSION_TEXTURE": true,
+                "VERTEX_COLORS": false
+            }
+        },
+        "223": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "SEPARATE_OCCLUSION_TEXTURE": true,
+                "GLOBAL_ILLUMINATION": true,
+                "CLEARCOAT": true,
+                "VERTEX_COLORS": false
+            },
+            "depthFunction": "less or equal",
+            "depthTest": true,
+            "sampleAlphaToCoverage": true
+        },
+        "226": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "229": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        },
+        "231": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true
+            }
+        },
+        "232": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true
+            }
+        },
+        "248": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
+        },
+        "249": {
+            "link": {
+                "name": "Color",
+                "file": "default"
+            }
+        },
+        "250": {
+            "link": {
+                "name": "VertexColor",
+                "file": "default"
+            }
+        },
+        "251": {
+            "link": {
+                "name": "AtmosphericSky",
+                "file": "default"
+            }
+        },
+        "253": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            },
+            "name": "vis",
+            "features": {
+                "ALPHA_MASKED": false,
+                "TEXTURED": true
+            },
+            "sampleAlphaToCoverage": true,
+            "doubleSided": true
+        }
+    },
+    "files": {
+        "250": {
+            "fileName": "models/oculus-touch-v2-left.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "251": {
+            "fileName": "models/oculus-touch-v2-right.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "252": {
+            "fileName": "models/hand-left.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "253": {
+            "fileName": "models/hand-right.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "254": {
+            "fileName": "models/button.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "255": {
+            "fileName": "models/teleport-indicator.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "258": {
+            "fileName": "white_cow_of_azure_lane.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "259": {
+            "fileName": "vube.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "260": {
+            "fileName": "models/white_cow_of_azure_lane.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "261": {
+            "fileName": "obot_-_cute_robot_challenge.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "262": {
+            "fileName": "cute_cat_low-poly (1).glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "263": {
+            "fileName": "open_container.glb",
+            "importerName": "",
+            "colorSpace": "srgb"
+        },
+        "264": {
+            "fileName": "Assets/cute_cat_low-poly.glb",
+            "importerName": ""
+        }
+    },
+    "fonts": {
+        "230": {
+            "link": {
+                "name": "DejaVuSans.ttf",
+                "file": "default"
+            }
+        }
+    },
+    "languages": {},
+    "shaderChunks": {
+        "1": {
+            "link": {
+                "name": "lib\\Color.glsl",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "lib\\Compatibility.glsl",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "lib\\CoordinateSystems.glsl",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "lib\\GI.glsl",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "lib\\Inputs.glsl",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "lib\\Lights.glsl",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "lib\\Materials.glsl",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "lib\\Math.glsl",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "lib\\MorphTargets.glsl",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "lib\\Packing.glsl",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "lib\\PhysicalBSDF.glsl",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "lib\\Quaternion.glsl",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "lib\\SkyProcedural.glsl",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "lib\\Slug.frag.glsl",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "lib\\Slug.vert.glsl",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "lib\\Surface.glsl",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "lib\\Textures.glsl",
+                "file": "default"
+            }
+        },
+        "18": {
+            "link": {
+                "name": "lib\\Uniforms.glsl",
+                "file": "default"
+            }
+        }
+    },
+    "morphTargets": {},
+    "particleEffects": {},
+    "probeVolumeScenarios": {},
+    "plugins": {}
+}

@@ -1,0 +1,26 @@
+{
+	"name": "enso",
+	"version": "1.0.0",
+	"description": "My Wonderland project",
+	"main": "js/index.js",
+	"type": "module",
+	"module": "js/index.js",
+	"scripts": {
+		"build": "echo \"The 'build' script is run by the editor and should produce your application bundle\"",
+		"format": "prettier --write \"js/*.ts\""
+	},
+	"keywords": [
+		"wonderland-engine"
+	],
+	"dependencies": {
+		"@wonderlandengine/api": "^1.5.0-rc.4",
+		"@wonderlandengine/components": "^1.2.1",
+		"@wonderlandengine/editor-api": "^1.4.7",
+		"@wonderlandengine/spatial-audio": "1.2.4",
+		"gl-matrix": "^3.4.3"
+	},
+	"devDependencies": {
+		"prettier-plugin-align": "^0.0.1-alpha.1",
+		"prettier-plugin-curly": "^0.4.0"
+	}
+}

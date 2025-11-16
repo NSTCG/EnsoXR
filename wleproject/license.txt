@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cute Cat (Low-Poly)
+* source:	https://sketchfab.com/3d-models/cute-cat-low-poly-2144c95689d84d50b5db84ac361b7d2d
+* author:	inksidze (https://sketchfab.com/inksidze)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cute Cat (Low-Poly)" (https://sketchfab.com/3d-models/cute-cat-low-poly-2144c95689d84d50b5db84ac361b7d2d) by inksidze (https://sketchfab.com/inksidze) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

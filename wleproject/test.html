@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>All Camera Inputs Grid (with Device IDs)</title>
+    <style>
+        :root {
+            --gap: 12px;
+            --card-radius: 10px;
+            --bg: #0f1724;
+            --panel: #0b1220;
+            --accent: #06b6d4;
+            --text: #e6eef6;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #071020 0%, #0b1522 100%);
+            color: var(--text);
+        }
+
+        header {
+            padding: 18px 20px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        p.lead {
+            margin: 0;
+            opacity: 0.8;
+            font-size: 13px;
+        }
+
+        #controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        button {
+            background: linear-gradient(90deg, rgba(6, 182, 212, 0.12), rgba(6, 182, 212, 0.06));
+            color: var(--text);
+            border: 1px solid rgba(6, 182, 212, 0.18);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            backdrop-filter: blur(6px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .meta {
+            font-size: 12px;
+            opacity: 0.8;
+            color: #b9cfe0;
+        }
+
+        main {
+            padding: 12px 20px 40px 20px;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--gap);
+            align-items: start;
+        }
+
+        .camera-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            position: relative;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .camera-top {
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .label {
+            font-size: 13px;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .deviceid {
+            font-size: 11px;
+            color: #94a3b8;
+            word-break: break-all;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #000;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 8px;
+            bottom: 8px;
+            background: rgba(0, 0, 0, 0.45);
+            color: #fff;
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .status {
+            padding: 8px;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
+        footer {
+            padding: 12px 20px;
+            font-size: 12px;
+            color: #98a8bd;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>All Camera Inputs</h1>
+            <p class="lead">Displays all connected cameras in a grid with device IDs. Tap Restart to re-open streams.
+            </p>
+        </div>
+        <div id="controls">
+            <button id="restartBtn">Restart all streams</button>
+            <span id="deviceCount" class="meta"></span>
+        </div>
+    </header>
+
+    <main>
+        <div id="status" class="status">Initializing…</div>
+        <div id="grid"></div>
+    </main>
+
+    <footer>
+        Requires camera permission and a secure context (https or localhost).
+        If device labels are blank, allow camera access first.
+    </footer>
+
+    <script>
+        (async function () {
+            const grid = document.getElementById('grid');
+            const status = document.getElementById('status');
+            const restartBtn = document.getElementById('restartBtn');
+            const deviceCountSpan = document.getElementById('deviceCount');
+
+            let streams = new Map();
+
+            function stopStream(stream) {
+                if (!stream) return;
+                stream.getTracks().forEach(t => { try { t.stop(); } catch (e) { } });
+            }
+
+            function createCard(deviceInfo) {
+                const card = document.createElement('div');
+                card.className = 'camera-card';
+
+                const top = document.createElement('div');
+                top.className = 'camera-top';
+
+                const label = document.createElement('div');
+                label.className = 'label';
+                label.textContent = deviceInfo.label || `Camera (${deviceInfo.deviceId.slice(0, 6)})`;
+
+                const deviceIdEl = document.createElement('div');
+                deviceIdEl.className = 'deviceid';
+                deviceIdEl.textContent = `ID: ${deviceInfo.deviceId}`;
+
+                top.appendChild(label);
+                top.appendChild(deviceIdEl);
+
+                const video = document.createElement('video');
+                video.autoplay = true;
+                video.playsInline = true;
+                video.muted = true;
+                video.setAttribute('data-device-id', deviceInfo.deviceId);
+
+                const overlay = document.createElement('div');
+                overlay.className = 'overlay';
+                overlay.textContent = 'loading…';
+
+                card.appendChild(top);
+                card.appendChild(video);
+                card.appendChild(overlay);
+
+                video.addEventListener('loadedmetadata', () => {
+                    overlay.textContent = `${video.videoWidth} × ${video.videoHeight}`;
+                });
+
+                return { card, video, overlayEl: overlay };
+            }
+
+            async function startAllStreams() {
+                status.textContent = 'Requesting camera permission…';
+                try
+                {
+                    const permStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                    stopStream(permStream);
+
+                    const devices = await navigator.mediaDevices.enumerateDevices();
+                    const videoDevices = devices.filter(d => d.kind === 'videoinput');
+
+                    if (videoDevices.length === 0)
+                    {
+                        status.textContent = 'No camera devices found.';
+                        deviceCountSpan.textContent = '';
+                        return;
+                    }
+
+                    status.textContent = `Opening ${videoDevices.length} camera(s)...`;
+                    deviceCountSpan.textContent = `${videoDevices.length} device(s)`;
+                    grid.innerHTML = '';
+
+                    for (const dev of videoDevices)
+                    {
+                        const { card, video, overlayEl } = createCard(dev);
+                        grid.appendChild(card);
+
+                        const constraints = {
+                            video: {
+                                deviceId: { exact: dev.deviceId },
+                                width: { ideal: 1280 },
+                                height: { ideal: 720 }
+                            },
+                            audio: false
+                        };
+
+                        try
+                        {
+                            const s = await navigator.mediaDevices.getUserMedia(constraints);
+                            video.srcObject = s;
+                            streams.set(dev.deviceId, { stream: s, cardEl: card });
+                            video.addEventListener('loadedmetadata', () => {
+                                overlayEl.textContent = `${video.videoWidth} × ${video.videoHeight}`;
+                            });
+                        } catch (err)
+                        {
+                            overlayEl.textContent = 'failed to open';
+                            const errLine = document.createElement('div');
+                            errLine.style.fontSize = '12px';
+                            errLine.style.color = '#ffb3b3';
+                            errLine.textContent = (err.name || '') + ': ' + (err.message || '');
+                            card.appendChild(errLine);
+                        }
+                    }
+                    status.textContent = 'Streams running';
+                } catch (err)
+                {
+                    status.textContent = 'Unable to access cameras: ' + err.message;
+                    deviceCountSpan.textContent = '';
+                    console.error(err);
+                }
+            }
+
+            function stopAllStreams() {
+                for (const entry of streams.values()) stopStream(entry.stream);
+                streams.clear();
+            }
+
+            async function restartAll() {
+                restartBtn.disabled = true;
+                restartBtn.textContent = 'Restarting…';
+                status.textContent = 'Stopping existing streams…';
+                stopAllStreams();
+                await new Promise(r => setTimeout(r, 300));
+                await startAllStreams();
+                restartBtn.disabled = false;
+                restartBtn.textContent = 'Restart all streams';
+            }
+
+            restartBtn.addEventListener('click', restartAll);
+
+            await startAllStreams();
+
+            navigator.mediaDevices.addEventListener('devicechange', restartAll);
+            window.addEventListener('beforeunload', stopAllStreams);
+        })();
+    </script>
+</body>
+
+</html>

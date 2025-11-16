@@ -1,0 +1,293 @@
+bl_info = {
+    "name": "Tri-Uniform UV Atlas - Equal Triangle Cells",
+    "author": "ChatGPT",
+    "version": (1, 0),
+    "blender": (3, 0, 0),
+    "description": "Triangulate, subdivide to more uniform triangles, then pack each triangle into equal cells in a new texture and UV map.",
+    "category": "Object",
+}
+
+import bpy, bmesh, math
+from mathutils import Vector
+import time
+
+def face_area_world_coords(f):
+    # compute face area in object-local coords using loop verts
+    verts = [l.vert.co for l in f.loops]
+    if len(verts) < 3:
+        return 0.0
+    a = verts[0]
+    total = 0.0
+    for i in range(1, len(verts)-1):
+        b = verts[i]; c = verts[i+1]
+        total += (b - a).cross(c - a).length / 2.0
+    return total
+
+def longest_edge_of_face(f):
+    # return (edge, length)
+    best = None
+    for e in f.edges:
+        l = (e.verts[0].co - e.verts[1].co).length
+        if best is None or l > best[1]:
+            best = (e, l)
+    return best
+
+def subdivide_edges_in_bm(bm, edges):
+    # use bmesh.ops.subdivide_edges
+    if not edges:
+        return
+    bmesh.ops.subdivide_edges(bm, edges=edges, cuts=1, use_grid_fill=False, use_single_edge=False)
+
+def ensure_triangulated(bm):
+    # Triangulate all faces
+    faces = [f for f in bm.faces]
+    if not faces:
+        return
+    bmesh.ops.triangulate(bm, faces=faces)
+
+def create_blank_image(name, width, height, color=(0.8,0.8,0.8,1.0)):
+    img = bpy.data.images.new(name, width=width, height=height, alpha=True, float_buffer=False)
+    # fill with color
+    px = [int(round(c*255)) for c in color]
+    # create simple fill via pixels (slowish) but okay for moderate sizes
+    pixels = [0]*(width*height*4)
+    for y in range(height):
+        for x in range(width):
+            idx = (y*width + x)*4
+            pixels[idx] = color[0]
+            pixels[idx+1] = color[1]
+            pixels[idx+2] = color[2]
+            pixels[idx+3] = color[3]
+    try:
+        img.pixels.foreach_set(pixels)
+    except Exception:
+        img.pixels[:] = pixels
+    img.update()
+    return img
+
+def main_make_uniform_tri_uv(mesh_obj, target_tri_area_factor = 0.8, max_iterations = 10, image_size=2048, padding_px=2):
+    """
+    mesh_obj : selected mesh object (Object)
+    target_tri_area_factor : target average area factor used to decide splitting
+    """
+    me = mesh_obj.data
+    # create bmesh
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    bm.verts.ensure_lookup_table()
+    bm.faces.ensure_lookup_table()
+
+    # Triangulate first
+    ensure_triangulated(bm)
+    bm.verts.index_update(); bm.edges.index_update(); bm.faces.index_update()
+
+    # compute initial face areas
+    def compute_face_areas():
+        areas = [face_area_world_coords(f) for f in bm.faces]
+        return areas
+
+    # iterative longest-edge split to approach uniform area
+    for iteration in range(max_iterations):
+        areas = compute_face_areas()
+        if not areas:
+            break
+        avg = sum(areas) / len(areas)
+        max_area = max(areas)
+        min_area = min(areas)
+        print(f"[iter {iteration}] faces={len(areas)} avg_area={avg:.6f} min={min_area:.6f} max={max_area:.6f}")
+        # stopping heuristics: if max_area is close to avg, stop
+        if max_area <= avg * (1.0 + 0.25):
+            print("Areas are sufficiently uniform; stopping subdivision.")
+            break
+        # collect edges to subdivide: the longest edge of faces whose area > avg * threshold
+        edges_to_subdivide = set()
+        thresh = avg * (1.0 + 0.5)  # split faces significantly larger than average
+        for f in list(bm.faces):
+            a = face_area_world_coords(f)
+            if a > thresh:
+                e, l = longest_edge_of_face(f)
+                # sometimes edge is None if degenerate
+                if e is not None:
+                    edges_to_subdivide.add(e)
+        if not edges_to_subdivide:
+            print("No long edges found to subdivide; stopping.")
+            break
+        subdivide_edges_in_bm(bm, list(edges_to_subdivide))
+        bm.verts.index_update(); bm.edges.index_update(); bm.faces.index_update()
+    # done subdividing
+
+    # ensure triangulated again (subdivide may create quads)
+    ensure_triangulated(bm)
+    bm.verts.index_update(); bm.faces.index_update()
+
+    faces = [f for f in bm.faces]
+    face_count = len(faces)
+    if face_count == 0:
+        bm.free()
+        print("No faces found, aborting.")
+        return
+
+    print(f"Final triangle count: {face_count}")
+
+    # prepare new UV layer (keep old as backup)
+    old_uv_layer = bm.loops.layers.uv.active
+    new_uv_name = "tri_islands_uv"
+    # if name exists in mesh.uv_layers, append timestamp
+    existing = [uv.name for uv in me.uv_layers]
+    if new_uv_name in existing:
+        new_uv_name = f"{new_uv_name}_{int(time.time())}"
+    new_uv_layer = bm.loops.layers.uv.new(new_uv_name)
+    print("Created new UV layer:", new_uv_name)
+
+    # compute grid layout for triangles
+    n = face_count
+    cols = int(math.ceil(math.sqrt(n)))
+    rows = int(math.ceil(n / cols))
+    cell_w = 1.0 / cols
+    cell_h = 1.0 / rows
+
+    print(f"Packing triangles into grid {cols} x {rows}; cell size {cell_w:.4f} x {cell_h:.4f}")
+
+    # For each face, assign UVs inside a cell. Map triangle loops to the canonical right triangle:
+    # loop0 -> (0,0), loop1 -> (1,0), loop2 -> (0,1) within the cell.
+    # Then offset to cell origin and scale by cell_w/cell_h (and apply padding)
+    # Compute padding in UV space to leave small gap between cells
+    pad_u = padding_px / float(image_size)
+    pad_v = padding_px / float(image_size)
+    # iterate faces and write UVs
+    idx = 0
+    for f in faces:
+        col = idx % cols
+        row = idx // cols
+        cell_x = col * cell_w
+        cell_y = row * cell_h
+        # compute inner rect (shrink by pad)
+        u0 = cell_x + pad_u
+        v0 = cell_y + pad_v
+        u1 = cell_x + cell_w - pad_u
+        v1 = cell_y + cell_h - pad_v
+        # canonical right triangle coords
+        uv_coords = [(u0, v0), (u1, v0), (u0, v1)]
+        # assign in loop order (face is triangle)
+        loops = f.loops
+        if len(loops) != 3:
+            # skip non-tri (shouldn't happen)
+            # fallback: triangulate single face as necessary
+            pass
+        for i, l in enumerate(loops):
+            # map i-> uv_coords[i]
+            cu, cv = uv_coords[i]
+            l[new_uv_layer].uv = (cu, cv)
+        idx += 1
+
+    # write bmesh to mesh
+    bm.to_mesh(me)
+    me.update()
+    # do not remove old UV layers; leave them for backup
+
+    # create blank image and assign to material
+    img_name = f"tri_atlas_{int(time.time())}"
+    img = create_blank_image(img_name, image_size, image_size, color=(0.9,0.9,0.9,1.0))
+    print("Created image:", img.name)
+
+    # try to assign to first image node found in materials
+    replaced = 0
+    for mat in mesh_obj.data.materials:
+        if not mat:
+            continue
+        if not getattr(mat, "use_nodes", False):
+            # try simple property
+            try:
+                if hasattr(mat, "diffuse_color"):
+                    # nothing to do; can't assign image easily without nodes
+                    pass
+            except Exception:
+                pass
+            continue
+        for n in mat.node_tree.nodes:
+            if n.type == 'TEX_IMAGE':
+                n.image = img
+                replaced += 1
+    # if none replaced, create a simple image texture node in first material (or create material)
+    if replaced == 0:
+        mat = None
+        if mesh_obj.data.materials:
+            mat = mesh_obj.data.materials[0]
+            if not getattr(mat, "use_nodes", False):
+                mat.use_nodes = True
+        else:
+            # create new material
+            mat = bpy.data.materials.new("tri_uv_material")
+            mat.use_nodes = True
+            mesh_obj.data.materials.append(mat)
+        tree = mat.node_tree
+        # create image node if not exists and link to material output/BSDF
+        img_node = None
+        for n in tree.nodes:
+            if n.type == 'TEX_IMAGE':
+                img_node = n; break
+        if img_node is None:
+            img_node = tree.nodes.new("ShaderNodeTexImage")
+            img_node.image = img
+            # try to wire to Principled BSDF base color
+            bsdf = None
+            for n in tree.nodes:
+                if n.type == 'BSDF_PRINCIPLED':
+                    bsdf = n; break
+            if bsdf:
+                tree.links.new(img_node.outputs.get("Color"), bsdf.inputs.get("Base Color"))
+        replaced = 1
+
+    print(f"Assigned new image to {replaced} image nodes/materials.")
+    print("Finished. New UV map name:", new_uv_name)
+    return True
+
+# ---------------- operator wrapper for easy run ----------------
+
+class OBJECT_OT_tri_uniform_uv(bpy.types.Operator):
+    bl_idname = "object.tri_uniform_uv"
+    bl_label = "Make Triangles Uniform and Create Equal UV Cells"
+    bl_description = "Triangulate, subdivide to approximate uniform triangles and map each triangle to its own cell in a new atlas"
+    bl_options = {'REGISTER', 'UNDO'}
+
+    target_area_factor: bpy.props.FloatProperty(name="Target Area Factor", default=0.8, min=0.1, max=2.0)
+    max_iter: bpy.props.IntProperty(name="Max Subdivide Iter", default=10, min=0, max=50)
+    image_size: bpy.props.IntProperty(name="Atlas Size (px)", default=2048, min=256, max=8192)
+    padding_px: bpy.props.IntProperty(name="Padding (px)", default=2, min=0, max=64)
+
+    def execute(self, context):
+        obj = context.active_object
+        if not obj or obj.type != 'MESH':
+            self.report({'ERROR'}, "Select a mesh object first.")
+            return {'CANCELLED'}
+        self.report({'INFO'}, "Processing... this may take time for complex meshes.")
+        try:
+            ok = main_make_uniform_tri_uv(obj, target_tri_area_factor=self.target_area_factor,
+                                          max_iterations=self.max_iter, image_size=self.image_size, padding_px=self.padding_px)
+            if ok:
+                self.report({'INFO'}, "Tri-uniform UV atlas created.")
+                return {'FINISHED'}
+            else:
+                self.report({'ERROR'}, "Operation failed.")
+                return {'CANCELLED'}
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            self.report({'ERROR'}, f"Exception: {e}")
+            return {'CANCELLED'}
+
+def menu_func(self, context):
+    self.layout.operator(OBJECT_OT_tri_uniform_uv.bl_idname)
+
+def register():
+    bpy.utils.register_class(OBJECT_OT_tri_uniform_uv)
+    bpy.types.VIEW3D_MT_object.append(menu_func)
+    print("Tri-uniform UV addon registered. Run 'Make Triangles Uniform and Create Equal UV Cells' from Object menu or F3.")
+
+def unregister():
+    bpy.utils.unregister_class(OBJECT_OT_tri_uniform_uv)
+    bpy.types.VIEW3D_MT_object.remove(menu_func)
+    print("Tri-uniform UV addon unregistered.")
+
+if __name__ == "__main__":
+    register()
